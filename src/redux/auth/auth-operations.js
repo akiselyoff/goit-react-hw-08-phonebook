@@ -21,9 +21,9 @@ const logIn = createAsyncThunk('auth/register', async credentials => {
   }
 });
 
-const authOperation = {
+const authOperations = {
   register,
   logIn,
 };
 
-export default authOperation;
+export default authOperations;
