@@ -5,11 +5,11 @@ import AuthNav from './AuthNav';
 import { getIsLogIn } from '../../redux/auth/auth-selectors';
 
 export default function AppBar() {
-  const isLoggedIn = useSelector(getIsLogIn);
+  const isLogIn = useSelector(getIsLogIn);
   return (
     <header>
       <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {isLogIn ? <UserMenu /> : <AuthNav />}
     </header>
   );
 }
