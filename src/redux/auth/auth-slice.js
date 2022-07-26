@@ -7,7 +7,7 @@ const initialState = {
     email: null,
   },
   token: null,
-  isLogIn: false,
+  isLoggedIn: false,
 };
 
 const authSlice = createSlice({
