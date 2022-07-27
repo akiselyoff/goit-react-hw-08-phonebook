@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -20,20 +20,22 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
+const middleware = [
+  ...getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
+  contactsApi.middleware,
+];
+
 export const store = configureStore({
   reducer: {
     [contactsApi.reducerPath]: contactsApi.reducer,
     filter,
     auth: persistReducer(authPersistConfig, authReducer),
   },
-  middleware: getDefaultMiddleware => [
-    ...getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
-    contactsApi.middleware,
-  ],
+  middleware,
   devTools: process.env.NODE_ENV === 'development',
 });
 
