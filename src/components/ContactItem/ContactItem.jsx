@@ -3,12 +3,12 @@ import { useDeleteContactMutation } from '../../API/contactsApi';
 
 const ContactItem = ({ contact }) => {
   const [deleteContact, { isLoading }] = useDeleteContactMutation();
-  const { id, name, phone } = contact;
+  const { id, name, number } = contact;
   return (
     <li className={s.contactItem}>
       <div className={s.contactContainer}>
         <p className={s.contactName}>{name}</p>
-        <p className={s.contactPhone}>{phone}</p>
+        <p className={s.contactPhone}>{number}</p>
       </div>
 
       <button

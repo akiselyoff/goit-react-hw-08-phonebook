@@ -8,6 +8,7 @@ const PrivateRoute = ({ children }) => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   return isLoggedIn ? children : <Navigate to="/login" replace={true} />;
 };
+
 export default PrivateRoute;
 
 PrivateRoute.propTypes = {
