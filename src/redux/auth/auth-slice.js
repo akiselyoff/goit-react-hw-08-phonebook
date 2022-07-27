@@ -29,10 +29,10 @@ const authSlice = createSlice({
       state.token = initialState.token;
       state.isLoggedIn = initialState.isLoggedIn;
     },
-    // [authOperations.fetchCurrentUser.fulfilled](state, action) {
-    //   state.user = action.payload;
-    //   state.isLoggedIn = true;
-    // },
+    [authOperations.fetchCurrentUser.fulfilled](state, action) {
+      state.user = action.payload;
+      state.isLoggedIn = true;
+    },
   },
 });
 
