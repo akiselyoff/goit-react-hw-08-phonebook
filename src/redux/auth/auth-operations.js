@@ -41,32 +41,32 @@ const logOut = createAsyncThunk('auth/logout', async () => {
   }
 });
 
-const fetchCurrentUser = createAsyncThunk(
-  'auth/refresh',
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
+// const fetchCurrentUser = createAsyncThunk(
+//   'auth/refresh',
+//   async (_, thunkAPI) => {
+//     const state = thunkAPI.getState();
+//     const persistedToken = state.auth.token;
 
-    if (persistedToken === null) {
-      console.log('Токена нет, уходим из fetchCurrentUser');
-      return thunkAPI.rejectWithValue();
-    }
+//     if (persistedToken === null) {
+//       console.log('Токена нет, уходим из fetchCurrentUser');
+//       return thunkAPI.rejectWithValue();
+//     }
 
-    token.set(persistedToken);
-    try {
-      const { data } = await axios.get('/users/current');
-      return data;
-    } catch (error) {
-      alert(error.message);
-    }
-  }
-);
+//     token.set(persistedToken);
+//     try {
+//       const { data } = await axios.get('/users/current');
+//       return data;
+//     } catch (error) {
+//       alert(error.message);
+//     }
+//   }
+// );
 
 const authOperations = {
   register,
   logIn,
   logOut,
-  fetchCurrentUser,
+  // fetchCurrentUser,
 };
 
 export default authOperations;
