@@ -32,36 +32,48 @@ export default function RegisterPage() {
 
   return (
     <div>
-      <h1>Страница регистрации</h1>
+      <h1 className={s.regTitle}>Welcome</h1>
+      <p className={s.regSubTitle}>Sign up to continue</p>
 
       <form onSubmit={handleSubmit} autoComplete="off" className={s.form}>
-        <label>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
+        <label className={s.label}>
+          Name
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            placeholder="Dan Abramov"
+            required
+          />
         </label>
 
-        <label>
-          Почта
+        <label className={s.label}>
+          Email
           <input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            placeholder="Dan@mail.com"
+            required
           />
         </label>
 
-        <label>
-          Пароль
+        <label className={s.label}>
+          Password
           <input
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
+            placeholder="Your password"
+            required
           />
         </label>
 
         <button type="submit" className="btn">
-          Зарегистрироваться
+          Sign Up
         </button>
       </form>
     </div>
