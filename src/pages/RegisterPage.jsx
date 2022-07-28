@@ -33,7 +33,7 @@ export default function RegisterPage() {
   return (
     <div>
       <h1 className={s.regTitle}>Welcome</h1>
-      <p className={s.regSubTitle}>Sign up to continue</p>
+      <p className={s.regSubTitle}>Sign up to start use</p>
 
       <form onSubmit={handleSubmit} autoComplete="off" className={s.form}>
         <label className={s.label}>

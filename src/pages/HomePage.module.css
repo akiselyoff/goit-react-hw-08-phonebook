@@ -1,0 +1,22 @@
+.container {
+  text-align: center;
+}
+.about {
+  color: gray;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  min-width: 250px;
+  margin: 0 auto;
+  list-style: none;
+}
+.list > li {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.list li span {
+  margin-left: 7px;
+}

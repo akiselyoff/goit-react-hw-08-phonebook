@@ -9,12 +9,13 @@ const Filter = () => {
   const dispatch = useDispatch();
   return (
     <label className={s.filterLabel}>
-      <title>Find contact by name</title>
+      Find contact by Name
       <input
         type="text"
         name="filter"
         value={value}
         onChange={e => dispatch(changeFilter(e.target.value))}
+        placeholder="Enter name"
       />
     </label>
   );
