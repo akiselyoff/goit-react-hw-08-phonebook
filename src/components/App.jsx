@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Container from '../components/Container/Container';
 import AppBar from './Header/AppBar/AppBar';
 import PublicRoute from './Routes/PublicRoute';
 import PrivateRoute from './Routes/PrivateRoute';
@@ -20,7 +21,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Container>
       {!isFetchingCurrentUser && (
         <>
           <AppBar />
@@ -60,6 +61,6 @@ export const App = () => {
           </Routes>
         </>
       )}
-    </>
+    </Container>
   );
 };
