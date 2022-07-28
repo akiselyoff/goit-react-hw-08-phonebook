@@ -53,7 +53,7 @@ const ContactForm = () => {
   return (
     <>
       <form className={s.form} action="submit" onSubmit={handleSubmit}>
-        <ContactPhoneIcon fontSize="large" />
+        <ContactPhoneIcon fontSize="large" className={s.contactPhoneIcon} />
         <label className={s.form__label}>
           Name
           <input

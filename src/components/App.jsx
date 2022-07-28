@@ -9,6 +9,7 @@ import HomePage from '../pages/HomePage';
 import RegisterPage from '../pages/RegisterPage';
 import LoginPage from '../pages/LoginPage';
 import ContactsPage from '../pages/ContactsPage';
+import ErrorPage from '../pages/ErrorPage';
 import authOperations from '../redux/auth/auth-operations';
 import { getIsFetchingCurrentUser } from '../redux/auth/auth-selectors';
 
@@ -58,6 +59,7 @@ export const App = () => {
                 </PrivateRoute>
               }
             />
+            <Route path="*" element={<ErrorPage />}></Route>
           </Routes>
         </>
       )}
