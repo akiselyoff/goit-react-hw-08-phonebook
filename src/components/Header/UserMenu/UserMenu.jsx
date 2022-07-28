@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import Button from '@mui/material/Button';
-import authOperations from '../../redux/auth/auth-operations';
-import { getUserName } from '../../redux/auth/auth-selectors';
+import authOperations from '../../../redux/auth/auth-operations';
+import { getUserName } from '../../../redux/auth/auth-selectors';
 // import defaultAvatar from './default-avatar.png';
 
 export default function UserMenu() {

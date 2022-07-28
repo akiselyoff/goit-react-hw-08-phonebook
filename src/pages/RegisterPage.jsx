@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../redux/auth/auth-operations';
+import s from './RegisterPage.module.css';
 
 export default function RegisterPage() {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export default function RegisterPage() {
     <div>
       <h1>Страница регистрации</h1>
 
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form onSubmit={handleSubmit} autoComplete="off" className={s.form}>
         <label>
           Имя
           <input type="text" name="name" value={name} onChange={handleChange} />
@@ -59,7 +60,9 @@ export default function RegisterPage() {
           />
         </label>
 
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit" className="btn">
+          Зарегистрироваться
+        </button>
       </form>
     </div>
   );
