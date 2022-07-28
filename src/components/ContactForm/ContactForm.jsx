@@ -5,6 +5,7 @@ import {
 } from '../../API/contactsApi';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 
 import s from './ContactForm.module.css';
 
@@ -52,6 +53,7 @@ const ContactForm = () => {
   return (
     <>
       <form className={s.form} action="submit" onSubmit={handleSubmit}>
+        <ContactPhoneIcon fontSize="large" />
         <label className={s.form__label}>
           Name
           <input
