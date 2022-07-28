@@ -1,21 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Button from '@mui/material/Button';
 import authOperations from '../../../redux/auth/auth-operations';
 import { getUserName } from '../../../redux/auth/auth-selectors';
-// import defaultAvatar from './default-avatar.png';
+import s from './UserMenu.module.css';
 
 export default function UserMenu() {
   const dispatch = useDispatch();
   const userName = useSelector(getUserName);
-  //   const avatar = defaultAvatar;
 
   return (
-    <div>
+    <div className={s.container}>
       <AccountBoxIcon color="primary" fontSize="large" />
 
-      {/* <img src={avatar} alt="" width="32" style={styles.avatar} /> */}
-      <span>Добро пожаловать, {userName}</span>
+      <span className={s.capture}>
+        Welcome, <b>{userName}</b>{' '}
+      </span>
 
       <Button
         type="button"
@@ -23,7 +24,7 @@ export default function UserMenu() {
         variant="contained"
         size="medium"
       >
-        Выйти
+        <LogoutIcon />
       </Button>
     </div>
   );

@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+.capture {
+  margin: 0 10px;
+}
