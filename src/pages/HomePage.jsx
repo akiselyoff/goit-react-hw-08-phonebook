@@ -20,7 +20,7 @@ const HomePage = () => {
         </li>
         <li>
           <VerifiedUserIcon />
-          <span>access protected</span>
+          <span>user verification</span>
         </li>
         <li>
           <EmojiObjectsIcon />
