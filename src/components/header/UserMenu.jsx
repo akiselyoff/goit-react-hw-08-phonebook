@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import Button from '@mui/material/Button';
 import authOperations from '../../redux/auth/auth-operations';
 import { getUserName } from '../../redux/auth/auth-selectors';
 // import defaultAvatar from './default-avatar.png';
@@ -10,11 +12,19 @@ export default function UserMenu() {
 
   return (
     <div>
+      <AccountBoxIcon color="primary" fontSize="large" />
+
       {/* <img src={avatar} alt="" width="32" style={styles.avatar} /> */}
       <span>Добро пожаловать, {userName}</span>
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
+
+      <Button
+        type="button"
+        onClick={() => dispatch(authOperations.logOut())}
+        variant="contained"
+        size="medium"
+      >
         Выйти
-      </button>
+      </Button>
     </div>
   );
 }
