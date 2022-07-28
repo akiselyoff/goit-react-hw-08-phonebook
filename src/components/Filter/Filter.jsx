@@ -15,7 +15,6 @@ const Filter = () => {
         name="filter"
         value={value}
         onChange={e => dispatch(changeFilter(e.target.value))}
-        placeholder="Enter name"
       />
     </label>
   );
